@@ -31,6 +31,7 @@ const SingUp = () => {
       sx={{
         width: "50%",
         backgroundColor: "blue",
+        justifyContent: "center",
       }}
     >
       <Typography
@@ -40,52 +41,66 @@ const SingUp = () => {
           fontSize: "2rem",
           marginTop: 0,
           marginBottom: "2rem",
+          textAlign: "center",
         }}
       >
         SingUp
       </Typography>
-      <Box component="form" onSubmit={handleSubmit}>
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={8}>
-              <FormControl>
-                <InputLabel htmlFor="my-input-name">Name</InputLabel>
-                <Input
-                  id="my-input-name"
-                  name="name"
-                  fullWidth
-                  aria-describedby="my-helper-text"
-                  onChange={handleInputChange}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={8}>
-              <FormControl>
-                <InputLabel htmlFor="my-input-email">Email</InputLabel>
-                <Input
-                  id="my-input-email"
-                  name="email"
-                  fullWidth
-                  aria-describedby="my-helper-text"
-                  onChange={handleInputChange}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={8}>
-              <FormControl>
-                <InputLabel htmlFor="my-input-password">Password</InputLabel>
-                <Input
-                  id="my-input-password"
-                  name="password"
-                  fullWidth
-                  aria-describedby="my-helper-text"
-                  onChange={handleInputChange}
-                />
-              </FormControl>
-            </Grid>
+      <Box
+        component="form"
+        sx={{
+          padding: 10,
+        }}
+        onSubmit={handleSubmit}
+      >
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <Grid item xs={8}>
+            <FormControl>
+              <InputLabel htmlFor="my-input-name">Name</InputLabel>
+              <Input
+                id="my-input-name"
+                name="name"
+                fullWidth
+                aria-describedby="my-helper-text"
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={8}>
+            <FormControl>
+              <InputLabel htmlFor="my-input-email">Email</InputLabel>
+              <Input
+                id="my-input-email"
+                name="email"
+                fullWidth
+                aria-describedby="my-helper-text"
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={8}>
+            <FormControl>
+              <InputLabel htmlFor="my-input-password">Password</InputLabel>
+              <Input
+                id="my-input-password"
+                name="password"
+                fullWidth
+                aria-describedby="my-helper-text"
+                onChange={handleInputChange}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={8}>
             <button type="submit">send</button>
           </Grid>
-        </div>
+        </Grid>
       </Box>
     </Container>
   );
