@@ -5,7 +5,18 @@ import Router from "./routes";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router />
+      <div
+        style={{
+          height: "100hv",
+          backgroundColor: "orange",
+          color: "white",
+          justifyContent: "center",
+          flexDirection: "column",
+          padding: 4,
+        }}
+      >
+        <Router />
+      </div>
     </ThemeProvider>
   );
 }

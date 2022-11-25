@@ -27,13 +27,10 @@ const SingUp = () => {
   };
   return (
     <Container
-      maxWidth="md"
+      maxWidth="sm"
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        height: "100vh",
-        alignItems: "center",
+        width: "50%",
+        backgroundColor: "blue",
       }}
     >
       <Typography
