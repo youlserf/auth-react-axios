@@ -2,7 +2,15 @@ import React, { useState } from "react";
 
 import { Container, Typography } from "@mui/material";
 
-import { Box, FormControl, InputLabel, Input, Grid } from "@mui/material/";
+import {
+  TextField,
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  Input,
+  Grid,
+} from "@mui/material/";
 import { post } from "../../service/service";
 const SingUp = () => {
   const [datos, setDatos] = useState({
@@ -27,78 +35,98 @@ const SingUp = () => {
   };
   return (
     <Container
-      maxWidth="sm"
       sx={{
-        width: "50%",
-        backgroundColor: "blue",
-        justifyContent: "center",
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
       }}
     >
       <Typography
-        variant="body1"
+        variant="h1"
         sx={{
-          color: "var(--dark-gray)",
-          fontSize: "2rem",
-          marginTop: 0,
-          marginBottom: "2rem",
           textAlign: "center",
+          color: "var(--dark-gray)",
+          fontSize: "4rem",
         }}
       >
         SingUp
       </Typography>
       <Box
         component="form"
-        sx={{
-          padding: 10,
-        }}
         onSubmit={handleSubmit}
+        sx={{ display: "flex", justifyContent: "center" }}
       >
         <Grid
           container
           spacing={2}
           sx={{
+            minWidth: "50%",
+            maxWidth: "60%",
+            display: "flex",
             justifyContent: "center",
-            textAlign: "center",
+            gap: 2,
           }}
         >
-          <Grid item xs={8}>
-            <FormControl>
-              <InputLabel htmlFor="my-input-name">Name</InputLabel>
-              <Input
-                id="my-input-name"
-                name="name"
-                fullWidth
-                aria-describedby="my-helper-text"
-                onChange={handleInputChange}
-              />
-            </FormControl>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              required
+              id="outlined-required"
+              label="Name"
+              name="name"
+              onChange={handleInputChange}
+            />
           </Grid>
-          <Grid item xs={8}>
-            <FormControl>
-              <InputLabel htmlFor="my-input-email">Email</InputLabel>
-              <Input
-                id="my-input-email"
-                name="email"
-                fullWidth
-                aria-describedby="my-helper-text"
-                onChange={handleInputChange}
-              />
-            </FormControl>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              required
+              id="outlined-required"
+              label="Email"
+              name="email"
+              onChange={handleInputChange}
+            />
           </Grid>
-          <Grid item xs={8}>
-            <FormControl>
-              <InputLabel htmlFor="my-input-password">Password</InputLabel>
-              <Input
-                id="my-input-password"
-                name="password"
-                fullWidth
-                aria-describedby="my-helper-text"
-                onChange={handleInputChange}
-              />
-            </FormControl>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              required
+              id="outlined-required"
+              label="Password"
+              name="password"
+              onChange={handleInputChange}
+            />
           </Grid>
-          <Grid item xs={8}>
-            <button type="submit">send</button>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: 2,
+            }}
+          >
+            <Button type="submit" variant="contained" disableElevation>
+              Login
+            </Button>
           </Grid>
         </Grid>
       </Box>

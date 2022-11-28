@@ -2,7 +2,15 @@ import React, { useState } from "react";
 
 import { Container, Typography } from "@mui/material";
 
-import { Box, FormControl, InputLabel, Input, Grid } from "@mui/material/";
+import {
+  TextField,
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  Input,
+  Grid,
+} from "@mui/material/";
 import { get } from "../../service/service";
 
 const Login = () => {
@@ -27,50 +35,86 @@ const Login = () => {
     console.log(response);
   };
   return (
-    <Container>
+    <Container
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 4,
+      }}
+    >
       <Typography
-        variant="body1"
+        variant="h1"
         sx={{
+          textAlign: "center",
           color: "var(--dark-gray)",
-          fontSize: "2rem",
-          marginTop: 0,
-          marginBottom: "2rem",
+          fontSize: "4rem",
         }}
       >
         Login
       </Typography>
+
       <Box
         component="form"
         onSubmit={handleSubmit}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        sx={{ display: "flex", justifyContent: "center" }}
       >
-        <div>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <FormControl>
-                <InputLabel htmlFor="my-input">Email address</InputLabel>
-                <Input
-                  id="my-input"
-                  name="email"
-                  aria-describedby="my-helper-text"
-                  onChange={handleInputChange}
-                />
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}>
-              <FormControl>
-                <InputLabel htmlFor="my-input">Password</InputLabel>
-                <Input
-                  id="my-input"
-                  name="password"
-                  aria-describedby="my-helper-text"
-                  onChange={handleInputChange}
-                />
-              </FormControl>
-            </Grid>
-            <button type="submit">send</button>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            minWidth: "50%",
+            maxWidth: "60%",
+            display: "flex",
+            justifyContent: "center",
+            gap: 2,
+          }}
+        >
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              required
+              id="outlined-required"
+              label="Email"
+              name="email"
+              onChange={handleInputChange}
+            />
           </Grid>
-        </div>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <TextField
+              required
+              id="outlined-required"
+              label="Password"
+              name="password"
+              onChange={handleInputChange}
+            />
+          </Grid>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: 2,
+            }}
+          >
+            <Button type="submit" variant="contained" disableElevation>
+              Login
+            </Button>
+          </Grid>
+        </Grid>
       </Box>
     </Container>
   );
